@@ -1,5 +1,5 @@
 # EVE-Online-API-How-to
-A quick how-to for using eveonlinejs
+A quick how-to for using eveonlinejs, an asynchronous EVE Online API client for node.js
 
 
 Using the eveonlinejs library: https://github.com/MichaelErmer/eveonlinejs
