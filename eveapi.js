@@ -55,19 +55,40 @@ eveonlinejs.fetch('account:Characters', function(err, result){
 	}
 })
 
-
+/*
 //displays wallet balance
 eveonlinejs.fetch('char:AccountBalance', function (err, result){
 	if (err) throw err
 	
-		var walletresponse = result.accounts;   	//sets variable to the  full result
-		//displays full results for debugging purposes. Also shows the output from the request.
+		//sets variable to the  full result
+		var walletresponse = result.accounts;   
+		
+		//Displays full result.  Allows you to see what it contains so you can pick the right object to use
 		//console.log(walletresponse)		
 		
-		//then loop through for wallet balance
-	for(var accounts in walletresponse){
-		console.log("Your current wallet balance: ", walletresponse[accounts].balance, " isk.")
-	}
+		//then loop through for wallet balance and display 
+		for(var accounts in walletresponse){
+			console.log("Your current wallet balance: ", walletresponse[accounts].balance, " isk.")
+		}
+})
+*/
+
+//skill in training
+eveonlinejs.fetch('char:SkillInTraining', function (err, result){
+	if (err) throw err
+	
+		//sets variable to the  full result
+		var skills = result;   	
+		//Displays full result.  Allows you to see what it contains so you can pick the right object to use
+		//console.log(skills);
+		
+		var trainingStart = result.trainingStartTime;
+		console.log("Skill training started: ", trainingStart, " UTC.");
+		
+		var trainingEnd = result.trainingEndTime;
+		console.log("Skill training ends: ", trainingEnd, "UTC.");
+		
+
 })
 
 
