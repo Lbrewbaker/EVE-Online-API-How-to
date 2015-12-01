@@ -1,0 +1,25 @@
+<div id="textText">
+
+<h2> Step two</h2> 
+<p class = "text">
+Now we are going to start getting into some coding.  Open a new JavaScript file and start by setting it up to require the eveonlinejs library:
+
+<xmp>
+	var eveApi = require('eveonlinejs')
+</xmp>
+
+You can now access functions built into the library using the <i class = "funcNames">eveApi</i> variable.  The only two functions built into the eveonlinejs library we are going to worry about today are <i class = "funcNames">setParams</i> and <i class = "funcNames">fetch</i>.
+</p>
+
+<p>
+Next, we will have to set your keyID and vCode.  To do that, we are going to use the <i class = "funcNames">setParams()</i> function.  Substitute the values below with your keyID and vCode:
+<xmp>
+	eveApi.setParams({
+		keyID: '123456',
+		vCode: 'hBjskljdF8JJjskjifsajkhlos29S9k2kmDDvXyJJ72io'
+	});
+</xmp>
+Once you have all this set you're now officially ready to start making some function calls to access the API.
+
+
+</div>
