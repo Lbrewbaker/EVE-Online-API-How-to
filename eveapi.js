@@ -45,15 +45,37 @@ eveonlinejs.fetch('account:AccountStatus', function(err, result){
 
 //displays character information
 
-eveonlinejs.fetch('account:Characters', function(err, result){
-	if(err) throw err
+function check(callback){
+	eveonlinejs.fetch('account:Characters', function(err, result){
+			if(err) throw err
+			
+			//console.log(result);
+			
+			callback(result.characters);
+			for(var characterID in result.characters){
+				//displays a big list of characters.  access individual items with a .parameter.  ex: .corporationName
+				console.log("Your characters name is: ", result.characters[characterID].name)
+				console.log("Your corporation name is: ", result.characters[characterID].corporationName);
+			}
+		});
+
+}		
+
+/*
+var why = check(function(characters){
 	
-	for(var characterID in result.characters){
-		//displays a big list of characters.  access individual items with a .parameter.  ex: .corporationName
-		console.log("Your characters name is: ", result.characters[characterID].name)
-		console.log("Your character ID is: ", result.characters[characterID].characterID);
-	}
-})
+	var returnval = characters;
+	return returnval;
+});
+console.log(why);
+
+*/
+
+check(function(characters){
+console.log(characters);
+
+});
+
 
 /*
 //displays wallet balance
