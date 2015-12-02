@@ -4,7 +4,7 @@
 
 
 <p class = "text">
-This guide is only going to cover very basic calls to the API key.  The first we're going to explore is getting character data.  Since we are using character specific API keys there is no need to pass the character ID as a parameter, but i'll show you how to access it anyway.
+Now let's start by accessing some basic character data.  Since we are using character specific API keys there is no need to pass the characterID as a parameter but you can if you have a full account wide API Key.
 
 <xmp class = "codez">
 	eveonlinejs.fetch('account:Characters', function(err, result){
@@ -15,32 +15,44 @@ This guide is only going to cover very basic calls to the API key.  The first we
 
 </xmp>
 
-This will log the full character list to your console and it should look like <a href="http://i.imgur.com/VhLTDri.jpg">this</a>.  The Character ID number above is what you're going to use if you have a full account API key and multiple characters.  We won't worry about that now.
+This will log the full character list to your console and it should look like:
+
+<br>
+<a href="/images/charout.jpg"><img src = "/images/charout.jpg" /></a>
+
+<br>
+This gives you an idea on how the data is returned when accessing the key. The Character ID number above is what you're going to use if you have a full account API key and multiple characters.  We won't worry about that now.
 </p>
 
 <p class = "text">
 As you can see, there is a lot of information there.  But today we're going to look at character name and coroporation name.  So to access that, we will add a variable and set it to the "result" and use that to access different parts of the data.  Result is the default return name for this function.  To setup and retrieve character name, and corporation name:
 
-<p>
-hi
-{{#each characters}}
-    {{@key}}: {{this}}
-{{/each}}
-</p>
+
 
 <xmp class = "codez">
 	eveonlinejs.fetch('account:Characters', function(err, result){
 		if(err) throw err
 		
 		var charInfo = result;
-		console.log(charInfo.name);                       //this prints the character name value
-		console.log(charInfo.corporationName)      //this prints the corporation name value
+		console.log("Character name: ",charInfo.name);                       //this prints the character name value
+		console.log("Coporation name: ",charInfo.corporationName)      //this prints the corporation name value
 	});
 </xmp>
 
-And you would get this output in the <a href = "http://i.imgur.com/1ZmXkCu.jpg">console</a>.
+And you would get this output:
+<ul>
+{{#each characters}}
+    <li>Character Name: {{name}}</li>
+	<li>Corporation name: {{corporationName}}</li>
 
-That is really all there is to it.  Now if you had a full account API you would have to use the character ID printed in the first step here and pass it as a parameter to the fetch() function to get your desired character
+{{/each}}
+</ul>
+
+I realize the response above is different from the screenshot, I am using a different account API for this example than I screen shotted above. Fetch returns the value <i class = "funcNames">result</i>. So what you want to do is set up a variable equal to that result.  In this case we use <i class = "funcNames">charInfo</i>.  Then you can access everything contained in that result by adding a period and the value you want to access.  In this case we used <i class = "funcNames">.name</i> and <i class = "funcNames">.coporationName</i>.  This same syntax will follow for other function calls as well. 
+
+</p>
+
+<p>Now if you had a full account API you would have to use the character ID printed in the first step here and pass it as a parameter to the fetch() function to get your desired character
 <xmp class = "codez">
 	eveonlinejs.fetch('account:Characters', {characterID: 123456}, function(err, result){
 		
@@ -49,6 +61,6 @@ That is really all there is to it.  Now if you had a full account API you would 
 	});
 </xmp>
 
-But again, I recommend starting with only one character at a time.  There is so much functionality built into this API it would be hard to cover in this guide.  I recommend 
+But again, I recommend starting with only one character at a time.  There is so much functionality built into this API it would be hard to cover in this guide. I also recommend logging the response data first so you can see how it is formatted. Each call is returned different and it helps to view the format it is returned so you know what to access.
 </p>
 </div>

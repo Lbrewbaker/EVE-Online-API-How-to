@@ -4,15 +4,27 @@
 
 <p class = "text">
 
-That pretty much covers the basics on how to use the eveonlinejs library and you the should be able to use the other functions with ease on the <a href="http://wiki.eve-id.net/APIv2_Page_Index">EVE Dev Wiki
-</a>.  Just make sure you change the parameters in the .fetch function depending on what you want to access.  The syntax on XML is "/char/AccountBalance", when you make a function call it changes to <i class = "funcNames">'char:AccountBalance'</i>.  
+That covers the basics on how to use the eveonlinejs library and you the should be able to use the other functions with ease on the <a href="http://wiki.eve-id.net/APIv2_Page_Index">EVE Dev Wiki
+</a>.  Just make sure you change the parameters in the .fetch function depending on what you want to access.  The syntax on XML is "/char/AccountBalance", when you make a function call it changes to <i class = "funcNames">'char:AccountBalance'</i>. Just make sure to follow that syntax depending on which function you want to access.
+
 </p>
 
 <p class = "text">
-Short and sweet.  Gives you more time for development, and while this is fancy information to have, i'm afraid it is all useless because there are already lots of third applications that use the EVE API.  In particular I recommend using EVE Mon, or even just using the default XML format and import data into Google docs.  Another word of advice, is don't take the game too seriously.  You'll end up like me and sink over 5,000 hours into it in the past 3 years.  
 
-7o and fly safe!
+They EVE API does not update in real time.  Delay on updating can be anywhere from 5 to 30 minutes depending on what you're trying to access.  The refresh time can be found on the EVE Dev wiki and should be kept in mind when trying to decide what functions to use.  If you are combining a lot of functions together, it would be helpful to make sure you only request as often as the longest refresh time in the group so as to avoid the server from locking you out. Once you make a request the data will be stored in a cache in the eveonlinejs library where it will be accessed in between the timers. You might encounter some errors when trying to access the key, a list of those error codes can be found <a href = "http://wiki.eve-id.net/APIv2_Eve_ErrorList_XML"> here</a>
+
 </p>
 
+<p>
+Here are a few additional resources for you to consider in development.  Most of the information I have has come from them. 
 
+<ul>
+	<li><a href = "http://wiki.eve-id.net/Main_Page">EVE Dev Wiki Main Page</a></li>
+	<li><a href="http://wiki.eve-id.net/APIv2_Page_Index">EVE API Page Index</a></li>
+	<li><a href = "https://forums.eveonline.com/default.aspx?g=posts&t=123737">EVE Online Technology Forums</a></li>
+
+</ul>
+
+If you have any questions or suggestions please feel free to send me an email at <a href = "mailto:hybridsquirrel@gmail.com">hybridsquirrel@gmail.com</a>.  I check my gaming related e-mails there.  Please remember to fly safe through New Eden!
+</p>
 </div>
