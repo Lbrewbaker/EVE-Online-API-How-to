@@ -1,4 +1,7 @@
 # EVE-Online-API-How-to
+
+## These are all likely deprecated with the EVE API Changes recently - this likely won't be updated anytime soon.
+
 A quick how-to for using eveonlinejs, an asynchronous EVE Online API client for node.js
 
 
